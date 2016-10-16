@@ -1,0 +1,8 @@
+#load "mp3common.cmo";;
+#load "mp3eval.cmo";;
+open Mp3eval;;
+open Mp3common;;
+#use "mp3.ml";;
+freeVarsInExp (LetRecInExp("f","x",AppExp(VarExp "f",VarExp "x"), AppExp(VarExp "f",VarExp "y")));;
+
+cps_exp (LetInExp ("x", ConstExp(IntConst 2), VarExp "x")) (ContVarCPS Kvar)
